@@ -2,6 +2,8 @@ require('packer').startup(function(use)
     use("wbthomason/packer.nvim")
     use("windwp/nvim-autopairs")
 
+    use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim",})
+
     -- theme
     use("folke/tokyonight.nvim")
     use("EdenEast/nightfox.nvim")
@@ -40,4 +42,12 @@ require('packer').startup(function(use)
     use("onsails/lspkind.nvim")
 
     use({ "williamboman/nvim-lsp-installer", "neovim/nvim-lspconfig", })
+    use({"godlygeek/tabular","preservim/vim-markdown"})
+    -- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)

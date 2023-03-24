@@ -12,6 +12,10 @@ require("nvim-tree").setup({
       list = {
         { key = "u", action = "dir_up" },
         { key = "v", action = "vsplit" },
+        { key = "<Tab>", action = "close" },
+        { key = "n",action = "create" },
+        { key = "r",action = "rename" },
+        { key = "R",action = "full_rename" },
       },
     },
   },
