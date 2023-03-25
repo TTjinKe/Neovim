@@ -39,7 +39,6 @@ require('packer').startup(function(use)
   use("rafamadriz/friendly-snippets")                        -- useful snippets
   use("onsails/lspkind.nvim")
   use({ "williamboman/nvim-lsp-installer", "neovim/nvim-lspconfig", })
-  use({ "godlygeek/tabular", "preservim/vim-markdown" })
   use({ 'preservim/nerdcommenter' })
   use({ 'mhartington/formatter.nvim' })
   use {
