@@ -11,6 +11,12 @@ if not actions_setup then
 end
 
 -- configure telescope
-telescope.setup({ })
+telescope.setup({
+  pickers = {
+    find_files = {
+      theme = "ivy",
+    }
+  },
+})
 
-vim.keymap.set('','<a-f>','<cmd>Telescope find_files<cr>')
+vim.keymap.set('', '<c-f>', '<cmd>Telescope find_files<cr>')
