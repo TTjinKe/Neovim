@@ -40,12 +40,12 @@ require('packer').startup(function(use)
   use("onsails/lspkind.nvim")
   use({ "williamboman/nvim-lsp-installer", "neovim/nvim-lspconfig", })
   use({ 'preservim/nerdcommenter' })
-  use({ 'mhartington/formatter.nvim' })
-  use {
+  use({'sbdchd/neoformat'})
+  use({
     'goolord/alpha-nvim',
     requires = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require 'alpha'.setup(require 'alpha.themes.startify'.config)
     end
-  }
+  })
 end)
