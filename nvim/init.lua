@@ -129,12 +129,12 @@ s('t', '<a-cr>', '<c-\\><c-n><cmd>bd!<cr>', to)
 
 -- Buffer delete
 
-s('i', '<c-c>', '<esc><cmd>bd<cr>', to)
-s('n', '<c-c>', '<esc><cmd>bd<cr>', to)
-s('t', '<c-c>', '<c-\\><c-n><cmd>bd<cr>', to)
-s('i', '<c-x>', '<esc><cmd>bd!<cr>', to)
-s('n', '<c-x>', '<esc><cmd>bd!<cr>', to)
-s('t', '<c-x>', '<c-\\><c-n><cmd>bd!<cr>', to)
+s('i', '<a-c>', '<esc><cmd>bd<cr>', to)
+s('n', '<a-c>', '<esc><cmd>bd<cr>', to)
+s('t', '<a-c>', '<c-\\><c-n><cmd>bd<cr>', to)
+s('i', '<a-x>', '<esc><cmd>bd!<cr>', to)
+s('n', '<a-x>', '<esc><cmd>bd!<cr>', to)
+s('t', '<a-x>', '<c-\\><c-n><cmd>bd!<cr>', to)
 
 -- Window coordinate
 
