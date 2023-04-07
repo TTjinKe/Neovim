@@ -76,7 +76,7 @@ end
 -- Esc a terminal and write in normal
 
 s("n", 'qq', "<cmd>wqa!<cr>", o)
-s('t', '<a-e>', '<Esc>', to)
+s('t', '<a-o>', '<Esc>', to)
 
 -- Choose windows
 
@@ -106,25 +106,28 @@ s('i', '<c-s>', '<esc><cmd>w<cr><c-w>s', o)
 --     windows term://pwsh, <cmd>terminal pwsh<cr>
 --     windows term://nu, <cmd>terminal nu<cr>
 --]]
+
+local shell = "nu"
+
 s('t', '<c-d>',
-  '<c-\\><c-n><cmd>vsplit term://nu<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i', o)
+  '<c-\\><c-n><cmd>vsplit term://'..shell..'<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i', o)
 s('t', '<c-s>',
-  '<c-\\><c-n><cmd>split term://nu<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i', o)
+  '<c-\\><c-n><cmd>split term://'..shell..'<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i', o)
 s('n', '<a-cr>',
-  '<cmd>w<cr><cmd>10 split term://nu<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i', o)
+  '<cmd>w<cr><cmd>10 split term://'..shell..'<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i', o)
 s('i', '<a-cr>',
-  '<esc><cmd>w<cr><cmd>10 split term://nu<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i',
+  '<esc><cmd>w<cr><cmd>10 split term://'..shell..'<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i',
   o)
-s('n', '<a-e>', '<cmd>terminal nu<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i', o)
-s('i', '<a-e>', '<esc><cmd>terminal nu<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i',
+s('n', '<a-o>', '<cmd>terminal '..shell..'<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i', o)
+s('i', '<a-o>', '<esc><cmd>terminal '..shell..'<cr><cmd>lua vim.wo.number = false<cr><cmd>lua vim.wo.relativenumber = false<cr>i',
   o)
 
 -- Window close
 
-s("i", '<c-q>', "<esc><cmd>q!<cr>", o)
-s("n", '<c-q>', "<cmd>q!<cr>", o)
+s("i", '<a-p>', "<esc><cmd>q!<cr>", o)
+s("n", '<a-p>', "<cmd>q!<cr>", o)
 s('t', '<Esc>', '<c-\\><c-n>', to)
-s('t', '<c-q>', '<c-\\><c-n><cmd>q!<cr>', to)
+s('t', '<a-p>', '<c-\\><c-n><cmd>bd!<cr>', to)
 s('t', '<a-cr>', '<c-\\><c-n><cmd>bd!<cr>', to)
 
 -- Buffer delete
@@ -154,7 +157,7 @@ s('i', '<c-h>', '<esc><c-w><', o)
 -- Table
 
 s('n', '<Space>', '<cmd>tabnew<cr>', o)
-s('n', '<a-k>', '<cmd>tabNext<cr>', o) -- before
+s('n', '<a-k>', '<cmd>tabNext<cr>', o) -- previous
 s('n', '<a-j>', '<cmd>tabnext<cr>', o)
 
 -- Navigate buffers
@@ -172,6 +175,6 @@ require('')
 vim.api.nvim_create_autocmd({ "InsertLeave" }, {
     callback = function()
         vim.fn.execute("silent! write")
-        vim.notify("Autosaved!", vim.log.levels.INFO, {})
+        vim.notify("Been written!", vim.log.levels.INFO, {})
     end,
 })
