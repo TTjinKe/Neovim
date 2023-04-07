@@ -55,7 +55,7 @@ local c               = vim.api.nvim_command
 local o               = { noremap = true, silent = true }
 local to              = { silent = true }
 
---- Leader
+--- Leader key
 vim.g.mapleader       = '.'
 
 --  Lexplore
@@ -75,10 +75,10 @@ end
 
 -- Esc a terminal and write in normal
 
-s("n", '<Esc><Esc><Esc>', "<cmd>wqa!<cr>", o)
+s("n", 'qq', "<cmd>wqa!<cr>", o)
 s('t', '<a-e>', '<Esc>', to)
 
--- Choose window
+-- Choose windows
 
 s('n', '<a-w>', '<c-w>k', o)
 s('n', '<a-d>', '<c-w>l', o)
@@ -93,7 +93,7 @@ s('i', '<a-d>', '<esc><cmd>w<cr><c-w>l', o)
 s('i', '<a-s>', '<esc><cmd>w<cr><c-w>j', o)
 s('i', '<a-a>', '<esc><cmd>w<cr><c-w>h', o)
 
--- Create window
+-- Create a window
 
 s('n', '<c-d>', '<c-w>v', o)
 s('n', '<c-s>', '<c-w>s', o)
@@ -121,10 +121,10 @@ s('i', '<a-e>', '<esc><cmd>terminal nu<cr><cmd>lua vim.wo.number = false<cr><cmd
 
 -- Window close
 
-s("i", '<Esc><Esc>', "<esc><cmd>q!<cr>", o)
-s("n", '<Esc><Esc>', "<cmd>q!<cr>", o)
+s("i", '<c-q>', "<esc><cmd>q!<cr>", o)
+s("n", '<c-q>', "<cmd>q!<cr>", o)
 s('t', '<Esc>', '<c-\\><c-n>', to)
-s('t', '<Esc><Esc>', '<c-\\><c-n><cmd>q!<cr>', to)
+s('t', '<c-q>', '<c-\\><c-n><cmd>q!<cr>', to)
 s('t', '<a-cr>', '<c-\\><c-n><cmd>bd!<cr>', to)
 
 -- Buffer delete
@@ -166,3 +166,12 @@ s("n", "<a-l>", "<cmd>bprevious<CR>", o)
 -- Plugins config
 
 require('')
+
+-- Supplemnet
+
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+    callback = function()
+        vim.fn.execute("silent! write")
+        vim.notify("Autosaved!", vim.log.levels.INFO, {})
+    end,
+})

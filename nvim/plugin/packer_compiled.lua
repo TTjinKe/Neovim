@@ -100,11 +100,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["formatter.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\formatter.nvim",
-    url = "https://github.com/mhartington/formatter.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
@@ -126,11 +121,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["markdown-preview.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\markdown-preview.nvim",
-    url = "https://github.com/iamcco/markdown-preview.nvim"
-  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-lspconfig.nvim",
@@ -140,6 +130,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  neoformat = {
+    loaded = true,
+    path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neoformat",
+    url = "https://github.com/sbdchd/neoformat"
   },
   nerdcommenter = {
     loaded = true,
@@ -196,11 +191,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  tabular = {
-    loaded = true,
-    path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tabular",
-    url = "https://github.com/godlygeek/tabular"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
@@ -210,11 +200,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["vim-markdown"] = {
-    loaded = true,
-    path = "C:\\Users\\__M__\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-markdown",
-    url = "https://github.com/preservim/vim-markdown"
   }
 }
 
