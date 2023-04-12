@@ -25,7 +25,6 @@ nvim_treesitter_configs.setup({
   autotag = { enable = true },
   -- ensure these language parsers are installed
   ensure_installed = {
-    "help",
     "python",
     "java",
     "lua",
